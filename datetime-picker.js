@@ -110,9 +110,9 @@ angular.module('ui.bootstrap.datetimepicker', ['ui.bootstrap.dateparser', 'ui.bo
                 var popupEl = angular.element('' +
                     '<div date-picker-wrap>' +
                     '<div uib-datepicker></div>' +
-                    '</div>' +
                     '<div time-picker-wrap>' +
                     '<div uib-timepicker style="margin:0 auto"></div>' +
+                    '</div>' +
                     '</div>');
 
                 if (ngModelOptions) {
