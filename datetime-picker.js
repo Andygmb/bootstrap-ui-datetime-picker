@@ -296,7 +296,7 @@ angular.module('ui.bootstrap.datetimepicker', ['ui.bootstrap.dateparser', 'ui.bo
 
                 // check if timePicker is being shown and merge dates, so that the date
                 // part is never changed, only the time
-                if ($scope.enableTime && $scope.showPicker === 'time') {
+                if ($scope.enableTime) {
 
                     // only proceed if dt is a date
                     if (dt || dt != null) {
@@ -443,11 +443,9 @@ angular.module('ui.bootstrap.datetimepicker', ['ui.bootstrap.dateparser', 'ui.bo
 
                 // in order to update the timePicker, we need to update the model reference!
                 // as found here https://angular-ui.github.io/bootstrap/#/timepicker
-                if (picker == 'time') {
-                    $timeout(function () {
-                        $scope.date = parseDateString(ngModel.$viewValue);
-                    }, 50);
-                }
+                $timeout(function () {
+                    $scope.date = parseDateString(ngModel.$viewValue);
+                }, 50);
             };
 
             $scope.close = function (closePressed, evt) {
